@@ -1,0 +1,58 @@
+﻿@model Doceria.Models.Doces
+@{ ViewBag.Title = "Doces"; }
+
+<h2>Doces</h2>
+@using (Html.BeginForm("DocesCadastrados", "Home", FormMethod.Post))
+{
+@Html.ValidationSummary(true)
+                <fieldset>
+                    <legend>Cadastro:</legend>
+
+
+                    <div class="editor-label">
+                        @Html.LabelFor(m => m.Doce_cd)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(m => m.Doce_cd)
+                        @Html.ValidationMessageFor(m => m.Doce_cd)
+                    </div>
+
+
+                    <div class="editor-label">
+                        @Html.LabelFor(m => m.Doce_tipo)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(m => m.Doce_tipo)
+                        @Html.ValidationMessageFor(m => m.Doce_tipo)
+                    </div>
+
+
+                    <div class="editor-label">
+                        @Html.LabelFor(m => m.Doce_fornec)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(m => m.Doce_fornec)
+                        @Html.ValidationMessageFor(m => m.Doce_fornec)
+                    </div>
+
+
+                    <div class="editor-label">
+                        @Html.LabelFor(m => m.Doce_peso)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(m => m.Doce_peso)
+                        @Html.ValidationMessageFor(m => m.Doce_peso)
+                    </div>
+
+
+                    <div class="editor-label">
+                        @Html.LabelFor(m => m.Doce_est)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(m => m.Doce_est)
+                        @Html.ValidationMessageFor(m => m.Doce_est)
+                    </div>
+                    <div>
+                        <br /> <input type="submit" value="Cadastrar" name="btnenviar" />
+                    </div>
+                </fieldset>}

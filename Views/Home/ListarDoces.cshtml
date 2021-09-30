@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Doceria.Models.Doces>
+@{ ViewBag.Title = "ListarDoces"; }
+<p>@Html.ActionLink("Cadastrar Doce", "Doce", "Home")</p>
+
+<table>
+    <tr>
+        <th>@Html.DisplayNameFor(m => m.Doce_cd)</th>
+        <th>@Html.DisplayNameFor(m => m.Doce_tipo)</th>
+        <th>@Html.DisplayNameFor(m => m.Doce_fornec)</th>
+        <th>@Html.DisplayNameFor(m => m.Doce_peso)</th>
+        <th>@Html.DisplayNameFor(m => m.Doce_est)</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@Html.DisplayFor(modelItem => item.Doce_cd)</td>
+    <td>@Html.DisplayFor(modelItem => item.Doce_tipo)</td>
+    <td>@Html.DisplayFor(modelItem => item.Doce_fornec)</td>
+    <td>@Html.DisplayFor(modelItem => item.Doce_peso)</td>
+    <td>@Html.DisplayFor(modelItem => item.Doce_est)</td>
+
+    <td>
+        @Html.ActionLink("Alterar", "AltDoce", null, new { Doce_cd = item.Doce_cd }, new { @class = "btn btn-primary btn-xs" })
+        @Html.ActionLink("Deletar", "DelDoce", null, new { Doce_cd = item.Doce_cd }, new { @class = "btn btn-danger btn-xs" })
+    </td>
+</tr>}
+
+</table>
