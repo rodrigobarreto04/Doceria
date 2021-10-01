@@ -1,7 +1,32 @@
-﻿
+﻿@model IEnumerable<Doceria.Models.Fornecedor>
 @{
-    ViewBag.Title = "FornecedorListar";
+    ViewBag.Title = "Fornecedor";
 }
+<p>@Html.ActionLink("Cadastrar Fornecedor", "Fornecedor", "Home")</p>
 
-<h2>FornecedorListar</h2>
 
+<table>
+    <tr>
+        <th>@Html.DisplayNameFor(m => m.Forn_cod)</th>
+        <th>@Html.DisplayNameFor(m => m.Forn_nome)</th>
+        <th>@Html.DisplayNameFor(m => m.Forn_endereco)</th>
+        <th>@Html.DisplayNameFor(m => m.Forn_telefone)</th>
+        <th>@Html.DisplayNameFor(m => m.Forn_telefone)</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Forn_cod)</td>
+            <td>@Html.DisplayFor(modelItem => item.Forn_nome)</td>
+            <td>@Html.DisplayFor(modelItem => item.Forn_endereco)</td>
+            <td>@Html.DisplayFor(modelItem => item.Forn_telefone)</td>
+            <td>@Html.DisplayFor(modelItem => item.Forn_telefone )</td>
+
+            <td>
+                @Html.ActionLink("Alterar", "AltForn", null, new { Forn_cod = item.Forn_cod }, new { @class = "btn btn-primary btn-xs" })
+                @Html.ActionLink("Deletar", "DelForn", null, new { Forn_cod = item.Forn_cod }, new { @class = "btn btn-danger btn-xs" })
+            </td>
+        </tr>
+    }
+
+</table>

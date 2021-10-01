@@ -1,7 +1,64 @@
-﻿
+﻿@model Doceria.Models.Fornecedor
 @{
     ViewBag.Title = "Fornecedor";
 }
 
-<h2>Fornecedor</h2>
+<center><h1>Fornecedores<br></h1></center>
+    @using (Html.BeginForm("FornecedorCad", "Home", FormMethod.Post))
+    {
+        @Html.ValidationSummary(true)
+<fieldset>
+    <center>
+        <legend>Cadastrar um funcionário:</legend>
 
+
+        <div class="editor-label">
+            @Html.LabelFor(m => m.Forn_cod)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.Forn_cod)
+            @Html.ValidationMessageFor(m => m.Forn_cod)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(m => m.Forn_nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.Forn_nome)
+            @Html.ValidationMessageFor(m => m.Forn_nome)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(m => m.Forn_endereco)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.Forn_endereco)
+            @Html.ValidationMessageFor(m => m.Forn_endereco)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(m => m.Forn_telefone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.Forn_telefone)
+            @Html.ValidationMessageFor(m => m.Forn_telefone)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(m => m.Forn_email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.Forn_email)
+            @Html.ValidationMessageFor(m => m.Forn_email)
+        </div>
+        <div>
+            <br /> <input type="submit" value="Cadastrar" name="btnenviar" />
+        </div>
+    </center>
+</fieldset>
+
+    }

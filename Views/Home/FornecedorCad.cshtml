@@ -1,7 +1,7 @@
-﻿
-@{
-    ViewBag.Title = "FornecedorCad";
-}
+﻿@model Doceria.Models.Fornecedor
+@{ ViewBag.Title = "FornecedorCad"; }
 
-<h2>FornecedorCad</h2>
-
+<center><h1>O fornecedor foi cadastrado com sucesso!!!!</h1></center>
+<br />
+<p>@Html.ActionLink("Voltar", "Fornecedor", "Home")</p>
+<p>@Html.ActionLink("Visualizar Fornecedores", "FornecedorListar", "Home")</p>
